@@ -1,0 +1,15 @@
+import Rodados.*
+import Dependencias.*
+
+
+
+test "Test con 2 dependencias" {
+	var deportes = new Dependencia ( empleados = 45)
+	var cultura = new Dependencia ( empleados = 31)
+	
+	
+	
+	
+	
+	
+}
