@@ -1,22 +1,38 @@
+import Rodados.*
+
 class Pedidos{
-	var property distancia
-	var property tiempoMaximo
-	var property capacidad
+	
+	var property distanciaARecorrer 
+	var property tiempoMaximo = 0
+	var property capacidad = 0
 	var property listaDeColoresIncompatibles = []
 	
 	method acelerar(){
-		tiempoMaximo -=1
+		tiempoMaximo = 1.max(tiempoMaximo - 1)
 	}
 
 	method relajar(){
 		tiempoMaximo += 1
 	}
+	
+	method velocidadPedida(){
+		return distanciaARecorrer / tiempoMaximo
+	}
+	
+	method satisfaceVelocidad(rodado){
+		return rodado.velocidad() >= self.velocidadPedida() + 10
+	}
+	
+	method satisfaceCapacidad(rodado){
+		return rodado.capacidad() >= capacidad
+	}
+	
+	method satisfaceColor(rodado){
+		return not listaDeColoresIncompatibles.contain(rodado.color())
+	}
+	
+	method satisfaceElPedido(rodado){
+		return self.satisfaceVelocidad(rodado) and self.satisfaceCapacidad(rodado) 
+		and self.satisfaceColor(rodado)
+	}
 }
-
-para que un AUTO satisfaga un pedido tiene que
-10km/h mas  que la velocidad pedida
-la capacidad sea igual o mayor al pedido
-que el auto no sea de un color incompatible
-
-
-tiene que ser pedido.satisface(auto)
