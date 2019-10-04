@@ -1,3 +1,4 @@
+
 class ChevroletCorsa {
 	var property color = " "
 	
@@ -26,27 +27,27 @@ object trafic {
 	method peso()= 4000 + interior.peso() + motor.peso()
 }
 
-object interiorComodo{
+object interiorComodo {
 	method capacidad()=5
 	method peso()=700
 }
 
-object interiorPopular{
+object interiorPopular {
 	method capacidad()=12
 	method peso()=1000
 }
 
-object motorPulenta{
+object motorPulenta {
 	method velocidad()=130
 	method peso()=800
 }
 
-object motorBataton{
+object motorBataton {
 	method velocidad()=80
 	method peso()=500
 }
 
-class AutoEspecial{
+class AutoEspecial {
 	var property capacidad
 	var property velocidad
 	var property peso

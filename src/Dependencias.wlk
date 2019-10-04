@@ -3,6 +3,7 @@ import Rodados.*
 class Dependencia{
 	var flota = []
 	var property empleados = 0
+	var registroDePedidos = []
 	
 	method agregarAFlota(rodado){
 		flota.add(rodado)
@@ -55,6 +56,31 @@ class Dependencia{
 	method esGrande(){
 		return self.empleados() >= 40 and self.flotaTieneAlMenos(5)
 	}
+	
+	method agregarPedidos(pedido){
+		registroDePedidos.add(pedido)
+	}
+	
+	method quitarPedidos(pedido){
+		registroDePedidos.remove(pedido)
+	}
+	
+	method totalPasajerosDePedidos(){
+		return registroDePedidos.sum({s => s.capacidad()})
+	}
+	// CUANDO CUESTA , SEPARAR EN VARIOS METODOS
+	method esIncompatibleElColorParaTodos(color){
+		return registroDePedidos.all({p => })
+	}
+	
+	method registrosNoPuedenSerSatisfechos(listaRodados){
+		// filtrar primero por pedidos  que algun auto no pueda satisfacer
+		listaRodados.forEach()
+	}
+	
+	// method algun auto satisface el pedido(pedido)
+	// return flota.any( v=> pedido.satisface(v) )
+	
 	
 }
 

@@ -5,8 +5,33 @@ import Pedidos.*
 
 
 test "Test con 2 dependencias" {
+	
 	var deportes = new Dependencia ( empleados = 45)
 	var cultura = new Dependencia ( empleados = 31)
+	
+	var cachito = new ChevroletCorsa (color = "azul")
+	
+	deportes.agregarAFlota( cachito )
+	deportes.agregarAFlota( new ChevroletCorsa ( color = "azul"))
+	deportes.agregarAFlota( new ChevroletCorsa ( color = "verde"))
+	deportes.agregarAFlota(new RenaultKwid (tAdicional = true))
+	deportes.agregarAFlota(new AutoEspecial (capacidad=5,velocidad=160,peso=1200,color="beige"))
+	
+	cultura.agregarAFlota( cachito )	
+	cultura.agregarAFlota(new RenaultKwid (tAdicional = true))
+	cultura.agregarAFlota(new RenaultKwid (tAdicional = true))
+	cultura.agregarAFlota(new RenaultKwid (tAdicional = false))
+	trafic.interior(interiorPopular)
+	trafic.motor(motorBataton)
+	cultura.agregarAFlota( trafic )
+	
+	assert.equals(6450, deportes.pesoTotalFlota())
+	assert.equals(10700,cultura.pesoTotalFlota())
+	assert.that(deportes.estaBienEquipada())
+	assert.notThat(cultura.estaBienEquipada())
+	assert.notThat(not deportes.estaBienEquipada())
+	assert.that(not cultura.estaBienEquipada())
+	
 	
 	
 	

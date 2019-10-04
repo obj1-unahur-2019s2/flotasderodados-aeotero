@@ -2,10 +2,10 @@ import Rodados.*
 
 class Pedidos{
 	
-	var property distanciaARecorrer 
+	const property distanciaARecorrer = 0
 	var property tiempoMaximo = 0
-	var property capacidad = 0
-	var property listaDeColoresIncompatibles = []
+	const property capacidad = 0
+	const property listaDeColoresIncompatibles = []
 	
 	method acelerar(){
 		tiempoMaximo = 1.max(tiempoMaximo - 1)
